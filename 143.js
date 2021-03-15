@@ -8,7 +8,7 @@ for (let a = 1; a < 2500; a++) {
     for (let c = Math.max(a-b+1, Math.floor((-b + Math.sqrt(4*a*a - 3*b*b))/2 + 1)); c <= b; c++) { //b+c>a, angle formed is > 120 degree
       var pqr = d(a,b,c)
       if(Number.isInteger(pqr))
-      triangles.push({a,b,c, pqr})
+        triangles.push({a,b,c, pqr})
     }
   }
 }

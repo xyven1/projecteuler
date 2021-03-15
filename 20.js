@@ -3,4 +3,5 @@ const factorial = val => val > BigInt(1) ? val*factorial(val- BigInt(1)) : BigIn
 console.log(factorial(BigInt(100))
             .toString()
             .split('')
-            .reduce((a,b)=> parseInt(a) + parseInt(b)))
+            .map(Number)
+            .reduce((a,b)=> a+b)))

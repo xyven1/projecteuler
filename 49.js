@@ -16,7 +16,6 @@ var fourDigitPrimes = []
 for(i = 1000; i<10000; i++)
 	if(isPrime(i)) fourDigitPrimes.push(i)
   
-var t0 = window.performance.now()
 fourDigitPrimes.forEach(p=>{
 	let perms = []
   findPermutations(p.toString()).forEach((p, i)=>{
@@ -39,4 +38,3 @@ fourDigitPrimes.forEach(p=>{
           	console.log(p[j], p[j]+diffs[i], p[j]+2*diffs[i], diffs[i])
   }
 })
-console.log(window.performance.now()-t0)

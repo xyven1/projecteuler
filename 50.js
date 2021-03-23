@@ -8,7 +8,7 @@ const eratosthenes = n => {
     if(array[i])
       output.push(i)
   return output
-}, isPrime = num => { for(let i = 2; i*i <= num; i++) if(num % i === 0) return 0; return num > 1}
+}, isPrime = num => { for(let i = 2; i*i <= num; i++) if(num % i === 0) return 0; return num > 1},
 primes = eratosthenes(1e4)
 var solution  = null
 for(let i = 0; i<primes.length-1 && !solution; i++){

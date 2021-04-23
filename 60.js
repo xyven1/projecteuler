@@ -19,4 +19,4 @@ recursive = (n, arr = []) => {
     }
 }
 console.log(recursive(5))
-//1s 300ms
+//1s 260ms

@@ -1,4 +1,3 @@
-var t0 = process.hrtime()
 const eratosthenes = n => {
   var array = Array(n).fill(1), output = [2];
   for (var i = 3; i*i <= n; i += 2)
@@ -23,5 +22,5 @@ const eratosthenes = n => {
 var total = 0
 for(var i = 2; i<=limit; i++)
   total+=phi(i)
-console.log(total, `${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(total)
 //20s

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Xyven1/projecteuler/issues"
   },
-  "homepage": "https://github.com/Xyven1/projecteuler#readme"
+  "homepage": "https://github.com/Xyven1/projecteuler#readme",
+  "devDependencies": {
+    "capture-console": "^1.0.1"
+  }
 }

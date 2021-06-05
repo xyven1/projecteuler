@@ -12,7 +12,7 @@ const findPermutations = (string) => {
 }
 
 var fourDigitPrimes = []
-
+var results = []
 for(i = 1000; i<10000; i++)
 	if(isPrime(i)) fourDigitPrimes.push(i)
   
@@ -35,6 +35,7 @@ fourDigitPrimes.forEach(p=>{
       if(diffs[i]==diffs[i+1])
         for(let j = 0; j<p.length; j++)
           if(p.indexOf(p[j]+diffs[i])!=-1 &&  p.indexOf(p[j]+2*diffs[i])!=-1)
-          	console.log(p[j], p[j]+diffs[i], p[j]+2*diffs[i], diffs[i])
+          	results.push([p[j], p[j]+diffs[i], p[j]+2*diffs[i], diffs[i]])
   }
 })
+console.log(results.find(v=>v[0]!=1487).join(''))

@@ -1,4 +1,3 @@
-var t0 = process.hrtime()
 const eratosthenes = n => {
   var array = Array(n).fill(1), output = [2];
   for (var i = 3; i*i <= n; i += 2)
@@ -20,5 +19,5 @@ for(let i = 0; i<primes.length; i++){
     if(n/p<max.p && perms(p, n)) max = {n: n, phi:p, p:n/p}
   }
 }
-console.log(max, `${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(max.n)
 //58ms

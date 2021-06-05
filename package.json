@@ -1,0 +1,19 @@
+{
+  "name": "projecteuler",
+  "version": "1.0.0",
+  "description": "Project Euler solutions",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xyven1/projecteuler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xyven1/projecteuler/issues"
+  },
+  "homepage": "https://github.com/Xyven1/projecteuler#readme"
+}

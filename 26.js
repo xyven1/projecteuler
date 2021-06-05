@@ -1,11 +1,10 @@
-max = {d: 0, l: 0}
-for(i = 1; i<1000; i++){
-  l = 1, d = i
-  while(d%2 == 0) d /= 2
-  while(d%5 == 0) d /= 5
-  if(d != 1)
-  	while(10n**BigInt(l)%BigInt(d) != 1)
-      l++
-  if(l>max.l) max = {d, l}
+const isPrime = num => { for(let i = 2; i*i <= num; i++) if(num % i === 0) return false; return num > 1}
+var max = {d: 0, l: 0}
+for(let i = 6; i<1000; i++){
+  var l = 10n
+  if(isPrime(i))
+  	while(l%BigInt(i) != 1)
+      l*=10n
+  if(l>max.l) max = {i, l: l}
 }
-console.log(max)
+console.log(max.i)

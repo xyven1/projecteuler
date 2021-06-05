@@ -11,9 +11,6 @@ const recursive = (v, cache, remaining = v, prev) =>{
 isPrime = num => { for(let i = 2; i*i <= num; i++) if(!(num % i)) return 0; return num > 1 }
 var cache = Array(limit+1).fill().map(()=>Array(limit+1).fill(0));
 var first = 0
-for(let i = 0; i<limit; i++){
-  first = i
-  if(recursive(i, cache)>5000) break
-}
+for(first = 0; !(recursive(first, cache)>5000); first++);
 console.log(first)
 //2.7ms, solved in 8m09s

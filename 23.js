@@ -1,24 +1,11 @@
-function d(n){
+const d = (n) => {
   var sum = 0
-	for(var i = 0; i<=n/2; i++)
-  	if(n%i == 0)
-    	sum+=i
-  return sum
-}
-function summable(n, l){
-	for(let i = 0; i<l.length && l[i]<=n-12; i++)
-  	if(isIn(n - l[i], l))
-        return true
-  return false
-}
-function isIn(n, l){
-	for(let i = 0; i<l.length && l[i]<=n; i++)
-  	if(l[i]==n)
-    	return true
-  return false
-}
-var abundantNumbers = [...Array(28123).keys()].filter(n=>d(n)>n) 
-
-var notSummable = [...Array(28123).keys()].filter(n=>!summable(n, abundantNumbers))
-
-console.log(notSummable.reduce((a,b) => a+b, 0))
+	for(var i = 1; i*i<=n; i++)
+  	sum += n%i==0 ? n/i==i ? i : i+n/i: 0
+  return sum-n
+}, max=28123,  abundantNumbers = [...Array(max).keys()].filter(n=>d(n)>n)
+var sumOfAbudant = Array(max+1).fill(0)
+for(let i = 0; i<abundantNumbers.length; i++)
+	for(let j = 0; j<=i && abundantNumbers[i]+abundantNumbers[j]<=max; j++)
+		sumOfAbudant[abundantNumbers[i] +abundantNumbers[j]] = 1
+console.log(sumOfAbudant.reduce((a,b, i) => a+i*(b==0), 0))

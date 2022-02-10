@@ -1,8 +1,7 @@
 const isPrime = num => {
   for(let i = 2; i*i <= num; i++) if(num % i === 0) return false
   return num > 1
-}
-const findPermutations = (string) => {
+}, findPermutations = (string) => {
 	if (string.length < 2 ) return string
   let perms = [] 
   for (let i = 0; i < string.length; i++)
@@ -35,7 +34,8 @@ fourDigitPrimes.forEach(p=>{
       if(diffs[i]==diffs[i+1])
         for(let j = 0; j<p.length; j++)
           if(p.indexOf(p[j]+diffs[i])!=-1 &&  p.indexOf(p[j]+2*diffs[i])!=-1)
-          	results.push([p[j], p[j]+diffs[i], p[j]+2*diffs[i], diffs[i]])
+          	results.push([p[j], p[j]+diffs[i], p[j]+2*diffs[i]])
   }
 })
 console.log(results.find(v=>v[0]!=1487).join(''))
+//9ms

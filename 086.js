@@ -24,5 +24,5 @@ while(U!=L+1){
   }
 }
 
-console.log(U, `${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(U)
 //7.1ms

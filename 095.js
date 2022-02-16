@@ -1,17 +1,28 @@
-const divSum = (num) => {
-  let result = 1;
-  for (let i = 2; i * i <= num; i++) {
-    result += num % i === 0
-      ? (i + (i * i === num ? 0 : num / i) )
-      : 0;
+const limit = 1e6;
+let sumDivs = new Array(limit).fill(0)
+for (let i = 1; i < limit; i++) {
+  sumDivs[i] -= i;
+  for (let j = i; j < limit; j += i)
+    sumDivs[j] += i;
+}
+let longestChain = [],
+  checked = new Array(limit).fill(0)
+for (let i = 0; i < limit; i++) {
+  let current = i
+  let chain = [i]
+  while (checked[current] === 0 && current < limit) {
+    checked[current] = 1
+    if (chain.includes(sumDivs[current])) {
+      let actualChain = chain.slice(chain.indexOf(sumDivs[current]))
+      if (actualChain.length > longestChain.length) {
+        longestChain = actualChain
+      }
+      break
+    }
+    current = sumDivs[current]
+    chain.push(current)
   }
-  return result;
 }
-let sumDivs = []
-var t0 = process.hrtime()
-for (let i = 0; i < 1e6; i++) {
-  sumDivs.push(divSum(i))
-}
-let longestChain = []
 
-console.log(`${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(Math.min(...longestChain))
+//120ms

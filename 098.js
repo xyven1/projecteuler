@@ -1,4 +1,3 @@
-var t0 = process.hrtime()
 const words = require('fs').readFileSync('./data/p098_words.txt', 'utf-8').split(',').map(v => v.slice(1, -1))
 const choose = (perms, arr, numToChoose, m = []) => {
     if (m.length === numToChoose)
@@ -54,5 +53,5 @@ for (let wordI = 0; wordI < wordsSorted.length; wordI++) {
     }
   }
 }
-console.log(max, `${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(max)
 //205ms

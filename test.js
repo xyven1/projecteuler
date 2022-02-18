@@ -20,6 +20,6 @@ console.log("total lines of code:", totalLines - 20 -100 -15)
 console.log("median:", results[Math.trunc(results.length/2)].time)
 console.log(JSON.stringify(results, null, 2))
 
-//currently 7.8533372s total for problems 1-91
-//average of 14 lines of code
-//average of 86ms, median of 12.5ms
+//8.2661882s for problems 1-100
+//average of 16 lines of code
+//average of 83ms, median of 12ms

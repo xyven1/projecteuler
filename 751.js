@@ -1,4 +1,3 @@
-var t0 = process.hrtime()
 const accuracy = 24,
   scale = (10n ** BigInt(accuracy)),
   floor = bigInt => bigInt / scale
@@ -14,5 +13,5 @@ while (c.length < 24) {
   theta = BigInt(c.padEnd(accuracy + floor(theta).toString().length, '0'))
 }
 
-console.log(floor(theta) + '.' + (theta - floor(theta) * scale).toString().substring(0, 24), `${process.hrtime(t0)[0]}s, ${process.hrtime(t0)[1]/1e6}ms`)
+console.log(floor(theta) + '.' + (theta - floor(theta) * scale).toString().substring(0, 24))
 // 0.20ms
